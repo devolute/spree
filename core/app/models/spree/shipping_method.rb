@@ -6,6 +6,8 @@ module Spree
 
     belongs_to :shipping_category, :class_name => "Spree::ShippingCategory"
     belongs_to :zone, :class_name => "Spree::Zone"
+    
+    default_scope where(:deleted_at => nil)
 
     attr_accessible :name, :zone_id, :display_on, :shipping_category_id,
                     :match_none, :match_one, :match_all
